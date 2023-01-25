@@ -21,6 +21,10 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
 // route
+const postRoutes = require('./routes/post')
+
+app.use('/api', postRoutes)
+
 app.get('*', (req, res) => {
   res.json({
     data: 'You reached nodejs api for react node crud app',
